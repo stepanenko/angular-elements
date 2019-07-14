@@ -4,17 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AlertComponent } from './alert.component';
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AlertComponent
+    AppComponent,
+    AlertComponent,
+    HelloWorldComponent
   ],
   imports: [
     BrowserModule
   ],
   // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  entryComponents: [AlertComponent],
-  bootstrap: []
+  entryComponents: [AlertComponent, HelloWorldComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(private injector: Injector) {}
