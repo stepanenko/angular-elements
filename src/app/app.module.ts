@@ -22,7 +22,7 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) {}
+  constructor(private injector: Injector) { }
 
   ngDoBootstrap() {
     const ngElement = createCustomElement(AlertComponent, {

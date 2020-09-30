@@ -5,6 +5,4 @@
 
 Updated on 30.09.2020
 
-Based on the Netanel Basal's article:
-'Understanding the Magic Behind Angular Elements' 
-
+Based on the Netanel Basal's article: 'Understanding the Magic Behind Angular Elements'
