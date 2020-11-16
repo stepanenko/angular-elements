@@ -1,8 +1,11 @@
 
-## [Angular Elements](https://netbasal.com/understanding-the-magic-behind-angular-elements-8e6804f32e9f)
+## React Fullstack
 
-**Can be replaced with a more meaningful project**
+* React
+* Node
+* Mongo
+* Sass
 
-Updated on 30.09.2020
+Updated all on 16.11.2020
 
-Based on the Netanel Basal's article: 'Understanding the Magic Behind Angular Elements'
+Inspired by Samer Buna
