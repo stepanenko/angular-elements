@@ -8,8 +8,8 @@ const Header = ({ message }) => {
   );
 };
 
-Header.propTypes = {
-  message: React.PropTypes.string
-};
+// Header.propTypes = { // needs a separate react package "prop-types"
+//   message: React.PropTypes.string
+// };
 
 export default Header;

@@ -9,7 +9,7 @@ const server = express();
 
 server.use(sassMiddleware({
   src: path.join(__dirname, 'sass'),
-  dest: path.join(__dirname, 'public')
+  dest: path.join(__dirname, 'dist')
 }));
 
 server.set('view engine', 'ejs');
@@ -21,7 +21,7 @@ server.get('/', (req, res) => {
 });
 
 server.use('/api', apiRouter);
-server.use(express.static('public'));
+server.use(express.static('dist'));
 
 server.listen(config.port, () => {
   console.info('Listening on port', config.port);
