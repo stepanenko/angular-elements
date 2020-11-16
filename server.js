@@ -19,7 +19,7 @@ server.set('view engine', 'ejs');
 
 server.get('/', (req, res) => {
   res.render('index', {
-    content: '...'
+    content: 'Loading...'
   });
 });
 
