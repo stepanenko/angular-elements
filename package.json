@@ -4,8 +4,8 @@
   "description": "Fullstack JavaScript with Mongo, Node and React",
   "main": "index.js",
   "scripts": {
-    "dev:server": "nodemon --exec babel-node server.js --ignore dist/",
-    "dev:bundler": "webpack -w --mode=development"
+    "server": "nodemon --exec babel-node server.js --ignore dist/",
+    "frontend": "webpack -w --mode=development"
   },
   "author": "Sergio",
   "dependencies": {
