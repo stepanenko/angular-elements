@@ -17,10 +17,17 @@ server.use(sassMiddleware({
 
 server.set('view engine', 'ejs');
 
+import serverRender from './serverRender';
+
 server.get('/', (req, res) => {
-  res.render('index', {
-    content: 'Loading...'
-  });
+  serverRender()
+    .then(({ initialMarkup, initialData }) => {
+      res.render('index', {
+        initialMarkup,
+        initialData
+      });
+    })
+    .catch(console.error);
 });
 
 // server.get('/about', (req, res) => {
@@ -31,6 +38,6 @@ server.get('/', (req, res) => {
 // OR simply use:
 server.use(express.static('dist'));
 
-server.listen(config.port, () => {
+server.listen(config.port, config.host, () => {
   console.info('Listening on port', config.port);
 });
