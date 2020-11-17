@@ -3,6 +3,7 @@
 
 Todo: connect to Mongo and fetch real data
 
+### Tech Stack
 * React
 * Node
 * Mongo
