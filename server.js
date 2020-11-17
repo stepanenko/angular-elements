@@ -1,10 +1,10 @@
 
 import express from 'express';
 import path from 'path';
-// import fs from 'fs';
 import sassMiddleware from 'node-sass-middleware';
 import config from './config';
 import apiRouter from './api';
+import serverRender from './serverRender';
 
 const server = express();
 
@@ -17,10 +17,9 @@ server.use(sassMiddleware({
 
 server.set('view engine', 'ejs');
 
-import serverRender from './serverRender';
 
-server.get('/', (req, res) => {
-  serverRender()
+server.get(['/', '/contest/:contestId'], (req, res) => {
+  serverRender(req.params.contestId)
     .then(({ initialMarkup, initialData }) => {
       res.render('index', {
         initialMarkup,
@@ -30,12 +29,6 @@ server.get('/', (req, res) => {
     .catch(console.error);
 });
 
-// server.get('/about', (req, res) => {
-//   fs.readFile('./dist/about.html', (err, data) => {
-//     res.send(data.toString());
-//   });
-// });
-// OR simply use:
 server.use(express.static('dist'));
 
 server.listen(config.port, config.host, () => {
