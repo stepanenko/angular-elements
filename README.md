@@ -1,6 +1,8 @@
 
 ## React Fullstack
 
+Todo: connect to Mongo and fetch real data
+
 * React
 * Node
 * Mongo
