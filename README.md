@@ -1,7 +1,7 @@
 
 ## React Fullstack
 
-Todo: connect to Mongo and fetch real data
+Todo: editing mongo data
 
 ### Tech Stack
 * React 17.0.1
