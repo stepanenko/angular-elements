@@ -3,10 +3,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Contest extends Component {
+  newNameInput = React.createRef();
+
   componentDidMount() {
-    console.log('PROPS',this.props);
+    console.log('PROPS', this.props);
     this.props.fetchNames(this.props.nameIds);
   }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.newNameInput.current.value);
+  };
 
   render() {
     return (
@@ -42,9 +49,14 @@ class Contest extends Component {
             <h3 className="panel-title">Propose a New Name</h3>
           </div>
           <div className="panel-body">
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <div className="input-group">
-                <input type="text" placeholder="New Name Here..." className="form-control" />
+                <input
+                  type="text"
+                  placeholder="New Name Here..."
+                  className="form-control"
+                  ref={this.newNameInput}
+                />
                 <span className="input-group-btn">
                   <button type="submit" className="btn btn-info">Sumbit</button>
                 </span>

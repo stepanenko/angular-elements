@@ -67,12 +67,11 @@ router.post('/names', (req, res) => {
   database.collection('names').insertOne({ name }).then(result => {
     database.collection('contests').updateOne(
       { _id: contestId },
-      { $push: { nameIds: result.insertedId } },
-      { new: true }
+      { $push: { nameIds: result.insertedId } }
     ).then(doc => {
       console.log('UPDATED:', doc.result);
       res.send({
-        updatedContest: doc.value,
+        // updatedContest: doc.value,
         newName: { _id: result.insertedId, name }
       });
     });
