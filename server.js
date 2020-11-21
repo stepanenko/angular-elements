@@ -1,5 +1,6 @@
 
 import express from 'express';
+import bodyParser from 'body-parser';
 import path from 'path';
 import sassMiddleware from 'node-sass-middleware';
 import config from './config';
@@ -8,6 +9,7 @@ import serverRender from './serverRender';
 
 const server = express();
 
+server.use(bodyParser.json());
 server.use('/api', apiRouter);
 
 server.use(sassMiddleware({
