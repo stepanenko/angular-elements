@@ -6,13 +6,13 @@ class Contest extends Component {
   newNameInput = React.createRef();
 
   componentDidMount() {
-    console.log('PROPS', this.props);
     this.props.fetchNames(this.props.nameIds);
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.newNameInput.current.value);
+    // console.log(this.newNameInput.current.value);
+    this.props.addName(this.newNameInput.current.value);
   };
 
   render() {

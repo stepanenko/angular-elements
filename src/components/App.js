@@ -85,18 +85,25 @@ class App extends React.Component {
     return 'Naming Contests';
   }
 
+  addName = name => {
+    console.log('name', name);
+  }
+
   currentContent() {
     if (this.state.currentContestId) {
       return <Contest
         contestListClick={this.fetchContestList}
         fetchNames={this.fetchNames}
         lookupName={this.lookupName}
-        {...this.currentContest()} />;
+        addName={this.addName}
+        {...this.currentContest()}
+      />;
     }
 
     return <ContestList
       onContestClick={this.fetchContest}
-      contests={this.state.contests} />;
+      contests={this.state.contests}
+    />;
   }
 
   render() {
