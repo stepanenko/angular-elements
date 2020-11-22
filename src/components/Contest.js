@@ -12,7 +12,7 @@ class Contest extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     // console.log(this.newNameInput.current.value);
-    this.props.addName(this.newNameInput.current.value);
+    this.props.addName(this.newNameInput.current.value, this.props._id);
   };
 
   render() {
@@ -75,11 +75,13 @@ class Contest extends Component {
 }
 
 Contest.propTypes = {
+  _id: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   contestListClick: PropTypes.func.isRequired,
   fetchNames: PropTypes.func.isRequired,
   lookupName: PropTypes.func.isRequired,
-  nameIds: PropTypes.array.isRequired
+  nameIds: PropTypes.array.isRequired,
+  addName: PropTypes.func.isRequired
 };
 
 export default Contest;

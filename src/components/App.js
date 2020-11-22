@@ -85,8 +85,10 @@ class App extends React.Component {
     return 'Naming Contests';
   }
 
-  addName = name => {
-    console.log('name', name);
+  addName = (name, contestId) => {
+    console.log('name', name, contestId);
+    // api.addName(name, contestId)
+    //   .then(res => this.setState());
   }
 
   currentContent() {
