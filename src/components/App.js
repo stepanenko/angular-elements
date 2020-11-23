@@ -86,9 +86,18 @@ class App extends React.Component {
   }
 
   addName = (name, contestId) => {
-    console.log('name', name, contestId);
-    // api.addName(name, contestId)
-    //   .then(res => this.setState());
+    api.addName(name, contestId).then(res => {
+      this.setState({
+        contests: {
+          ...this.state.contests,
+          [res.updatedContest._id]: res.updatedContest
+        },
+        names: {
+          ...this.state.names,
+          [res.newName._id]: res.newName
+        }
+      });
+    });
   }
 
   currentContent() {

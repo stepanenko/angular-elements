@@ -16,7 +16,7 @@ export const fetchNames = nameIds => {
     .then(resp => resp.data.names);
 };
 
-export const addName = (name, contestId) => {
-  return axios.post('/api/names', { name, contestId })
+export const addName = (newName, contestId) => {
+  return axios.post('/api/names', { newName, contestId })
     .then(res => res.data);
 };

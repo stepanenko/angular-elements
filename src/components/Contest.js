@@ -11,8 +11,9 @@ class Contest extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(this.newNameInput.current.value);
+    // console.log('this.props', this.props);
     this.props.addName(this.newNameInput.current.value, this.props._id);
+    this.newNameInput.current.value = '';
   };
 
   render() {

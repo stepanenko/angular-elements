@@ -1,8 +1,6 @@
 
 ## React Fullstack
 
-Todo: editing mongo data
-
 ### Tech Stack
 * React 17.0.1
 * Node

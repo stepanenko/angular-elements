@@ -65,13 +65,13 @@ router.post('/names', (req, res) => {
   const name = req.body.newName;
 
   database.collection('names').insertOne({ name }).then(result => {
-    database.collection('contests').updateOne(
+    database.collection('contests').findOneAndUpdate(
       { _id: contestId },
-      { $push: { nameIds: result.insertedId } }
-    ).then(doc => {
-      console.log('UPDATED:', doc.result);
+      { $push: { nameIds: result.insertedId } },
+      { returnOriginal: false }
+    ).then(updatedDoc => {
       res.send({
-        // updatedContest: doc.value,
+        updatedContest: updatedDoc.value,
         newName: { _id: result.insertedId, name }
       });
     });
